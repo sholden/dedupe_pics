@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require "dedupe_pics"
+
+if ARGV.length < 2
+  puts "Usage: dedupe_pics [original_paths...] [destination_path]"
+  exit(1)
+else
+  DedupePics::Deduper.new(ARGV[0..-2], ARGV[-1]).dedupe!
+end
